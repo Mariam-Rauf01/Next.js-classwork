@@ -34,7 +34,7 @@ function Aboutus() {
           <Image
             src="/images/images 1.png"
             alt="Barista brewing coffee"
-            width={300}  // Adjusted size for better balance
+            width={300} 
             height={400}
             className="object-cover rounded-lg"
           />
@@ -43,7 +43,7 @@ function Aboutus() {
           <Image
             src="/images/360_F_858026405_uT17kRFEVYwLtjhPEZVFElWhUigWOT4A.jpg"
             alt="Coffee selection"
-            width={300}  // Adjusted size for consistency
+            width={300}
             height={400}
             className="object-cover rounded-lg"
           />
@@ -56,7 +56,7 @@ function Aboutus() {
           className="font-outfit text-xl"
           style={{ color: "#5A3535", maxWidth: "800px" }}
         >
-          At Coffoholics, coffee is more than just a drink—it’s a passion. Our
+          At Coffoholics, coffee is more than just a drink—it is a passion. Our
           journey began with a simple love for the art of brewing and a desire
           to create a space where people could enjoy exceptional coffee in a
           warm and welcoming environment. From ethically-sourced beans to
@@ -65,7 +65,7 @@ function Aboutus() {
           suppliers to bring you the freshest, high-quality ingredients. Our
           team of dedicated baristas is committed to making your experience
           unforgettable, whether you're stopping by for your morning pick-me-up
-          or staying to work and relax. As we grow, we’re constantly exploring
+          or staying to work and relax. As we grow, we are constantly exploring
           new ways to bring you exciting flavors and sustainable practices. At
           Coffoholics, we aim to create not just great coffee, but moments of
           connection, one cup at a time.
@@ -74,7 +74,7 @@ function Aboutus() {
           <Image
             src="/images/images (16).jfif"
             alt="Coffee selection"
-            width={300}  // Adjusted size for consistency
+            width={300}
             height={400}
             className="object-cover rounded-lg"
           />
@@ -84,7 +84,7 @@ function Aboutus() {
           <Image
             src="/images/bar-1869656_1920.webp"
             alt="Coffee selection"
-            width={300}  // Adjusted size for consistency
+            width={300}
             height={400}
             className="object-cover rounded-lg"
           />
