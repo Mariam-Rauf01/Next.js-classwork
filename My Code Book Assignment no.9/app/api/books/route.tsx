@@ -9,48 +9,7 @@ interface Book {
 }
 
 let books: Book[] = [
-  {
-    id: 1,
-    title: "Learn JavaScript Quickly",
-    author: "Code Quickly",
-    image: "/pic1.jpg",
-    available: true,
-  },
-  {
-    id: 2,
-    title: "Automate the Boring Stuff with Python",
-    author: "Al Sweigart",
-    image: "/pic2.jpg",
-    available: true,
-  },
-  {
-    id: 3,
-    title: "Eloquent JavaScript",
-    author: "Allama Iqbal",
-    image: "/pic3.jpg",
-    available: true,
-  },
-  {
-    id: 4,
-    title: "Programming Rust",
-    author: "Jim Blandy and Jason Orendorff",
-    image: "/pic4.jpg",
-    available: true,
-  },
-  {
-    id: 5,
-    title: "Soft Skills: The Software Developer's Life Manual",
-    author: "John Sonmez",
-    image: "/pic5.jpg",
-    available: true,
-  },
-  {
-    id: 6,
-    title: "Clean Code: A Handbook of Agile Software Craftsmanship",
-    author: "Robert C. Martin",
-    image: "/pic6.jpg",
-    available: true,
-  },
+  // Your book data
 ];
 
 // GET Method
@@ -62,6 +21,7 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const newBook: Book = await req.json();
+
     // Ensure that a valid book is added
     if (!newBook.title || !newBook.author || !newBook.image) {
       return NextResponse.json(
@@ -69,7 +29,10 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
-    books.push({ ...newBook, id: books.length + 1 });
+
+    // Adding a new book with unique id
+    const newBookWithId = { ...newBook, id: Date.now() };  // Use Date.now() for unique ids
+    books.push(newBookWithId);
     return NextResponse.json({ message: "Book added successfully!" }, { status: 201 });
   } catch (error) {
     return NextResponse.json(
@@ -83,6 +46,14 @@ export async function POST(req: Request) {
 export async function PUT(req: Request) {
   try {
     const updatedBook: Book = await req.json();
+
+    if (!updatedBook.id || isNaN(updatedBook.id) || updatedBook.id <= 0) {
+      return NextResponse.json(
+        { message: "Invalid or missing book id" },
+        { status: 400 }
+      );
+    }
+
     const bookIndex = books.findIndex((book) => book.id === updatedBook.id);
 
     if (bookIndex === -1) {
@@ -106,6 +77,14 @@ export async function PUT(req: Request) {
 export async function DELETE(req: Request) {
   try {
     const { id }: { id: number } = await req.json();
+
+    if (!id || isNaN(id) || id <= 0) {
+      return NextResponse.json(
+        { message: "Invalid or missing book id" },
+        { status: 400 }
+      );
+    }
+
     const bookIndex = books.findIndex((book) => book.id === id);
 
     if (bookIndex === -1) {

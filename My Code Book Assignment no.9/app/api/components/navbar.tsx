@@ -6,7 +6,7 @@ import { BiCart } from "react-icons/bi";
 
 const Navbar = () => {
   return (
-    <header className="flex justify-between items-center bg-gray-300 py-3 md:px-20 px-5">
+    <header className="flex justify-between items-center bg-blue-50 py-3 md:px-20 px-5">
       {/* Left Section: Logo */}
       <div className="flex-shrink-0">
         <Image 
