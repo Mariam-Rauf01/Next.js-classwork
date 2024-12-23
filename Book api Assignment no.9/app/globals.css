@@ -64,7 +64,7 @@ body {
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-gray-200; /* Example: Use a valid border color class */
   }
   body {
     @apply bg-background text-foreground;
